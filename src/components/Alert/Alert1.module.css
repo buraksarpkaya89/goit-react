@@ -1,0 +1,20 @@
+.main{
+  font-size: 100px;
+}
+.alert2 {
+  background-color: chocolate;
+}
+
+.red{
+  composes: main;
+  background-color: red;
+  font-size: 20px;
+}
+
+.blue{
+  background-color: blue;
+}
+
+.defaultCss{
+  background-color: yellow;
+}
