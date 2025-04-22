@@ -1,13 +1,24 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
+import { useState } from 'react'
 import './App.css'
 import Alert from './components/Alert/Alert'
 import Content from './components/Content'
 import Footer from './components/Footer'
+import NewComp from './components/NewComp'
+import OnclickComp from "./components/OnclickComp"
+import Sayac from './components/Sayac'
+import Users from './components/Users'
+import Student from './components/Student'
 
 function App() {
   // const [count, setCount] = useState(0)
+
+  const [isOpen, setIsOpen] = useState(false)
+  const handleClick1 = () => {
+    setIsOpen(!isOpen)
+  }
 
   let number = 10
   let number1 = 15
@@ -17,6 +28,19 @@ function App() {
 
   return (
     <>
+
+    <Student/>
+      <Users/>
+      <Sayac/>
+
+      {/* <NewComp isOpen={isOpen} setIsOpen={setIsOpen} handleClick1={handleClick1} />
+      <OnclickComp isOpen={isOpen} setIsOpen={setIsOpen} handleClick1={handleClick1} /> */}
+      {/* <OnclickComp message="Playing music!" >
+        Play
+      </OnclickComp>
+      <OnclickComp message="Uploading your data!" >
+        Upload data
+      </OnclickComp> */}
       {/* <div className='content' >
       <div><Content elma = {number} test = "bu bir testtir" arrayNumber= {arrayNumber}/></div>
       <div><Content elma = {number1} test = "bu bir test2dir" arrayNumber= {arrayNumber}/></div>
@@ -33,7 +57,7 @@ function App() {
       </Footer> */}
 
 
-      {
+      {/* {
         cinsiyet === "erkek" ?
           <Alert error="blue">
             olumlu mesajı
@@ -42,7 +66,7 @@ function App() {
           <Alert error="red">
             hata mesajı
           </Alert>
-      }
+      } */}
 
 
 
