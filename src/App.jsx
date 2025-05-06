@@ -13,6 +13,10 @@ import Users from './components/Users'
 import Student from './components/Student'
 import Effect from './components/Effect'
 import Post from './components/Post'
+import Forms from './components/Forms/Forms'
+import TodoHeader from './components/TodoApp/TodoHeader'
+import TodoForm from './components/TodoApp/TodoForm'
+import TodoList from './components/TodoApp/TodoList'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -35,11 +39,39 @@ function App() {
   //     console.log("Clean up");
   //   };
   // });
+  // const [data,setData] =useState({})
 
+  // const handleLogin = (userData) => {
+  //   // Verilerle gerekli işlemleri yapıyoruz
+  //   setData(userData);
+  // };
+
+  const [todos, setTodos] = useState([])
+  const [searhText, setSearchText] = useState("")
+
+  const addTodo = (text) => {
+    const newTodo = {
+      id: Date.now(),
+      text: text
+    }
+    setTodos([...todos, newTodo])
+  }
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id))
+  }
+
+  const filteredTodos = todos.filter(todo => todo.text.toLowerCase().includes(searhText.toLowerCase()))
+  console.log(todos);
 
   return (
     <>
-      <Post/>
+
+      <TodoHeader searhText={searhText} setSearchText={setSearchText}/>
+      <TodoForm addTodo={addTodo}/>
+      <TodoList filteredTodos={filteredTodos} deleteTodo={deleteTodo}/>
+      {/* <Forms handleLogin= {handleLogin}/> */}
+      {/* <Post data={data}/> */}
       {/* <div>
         <button onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? "Close" : "Open"}
@@ -48,7 +80,7 @@ function App() {
       </div> */}
 
       {/* <Effect /> */}
-      
+
       {/* <Student/>
       <Users/>
       <Sayac/> */}
