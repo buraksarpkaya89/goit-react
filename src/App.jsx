@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Alert from './components/Alert/Alert'
 import Content from './components/Content'
@@ -11,14 +11,16 @@ import OnclickComp from "./components/OnclickComp"
 import Sayac from './components/Sayac'
 import Users from './components/Users'
 import Student from './components/Student'
+import Effect from './components/Effect'
+import Post from './components/Post'
 
 function App() {
   // const [count, setCount] = useState(0)
 
   const [isOpen, setIsOpen] = useState(false)
-  const handleClick1 = () => {
-    setIsOpen(!isOpen)
-  }
+  // const handleClick1 = () => {
+  //   setIsOpen(!isOpen)
+  // }
 
   let number = 10
   let number1 = 15
@@ -26,12 +28,30 @@ function App() {
 
   let cinsiyet = "kadın"
 
+  // useEffect(() => {
+  //   console.log("Effect");
+
+  //   return () => {
+  //     console.log("Clean up");
+  //   };
+  // });
+
+
   return (
     <>
+      <Post/>
+      {/* <div>
+        <button onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? "Close" : "Open"}
+        </button>
+        {isOpen && <Effect />}
+      </div> */}
 
-    <Student/>
+      {/* <Effect /> */}
+      
+      {/* <Student/>
       <Users/>
-      <Sayac/>
+      <Sayac/> */}
 
       {/* <NewComp isOpen={isOpen} setIsOpen={setIsOpen} handleClick1={handleClick1} />
       <OnclickComp isOpen={isOpen} setIsOpen={setIsOpen} handleClick1={handleClick1} /> */}

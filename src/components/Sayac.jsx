@@ -4,6 +4,21 @@ const Sayac = () => {
 
     const [number, setNumber] = useState(0)
     const [gece,setGece] = useState(false)
+    const [date,setDate] = useState(()=> {
+        const today = new Date()
+        today.setDate(today.getDate() + 7)
+        return today
+    })
+
+    const [numara,setNumara] = useState(()=> {
+        const arr = []
+        for(let i = 1 ; i<= 5 ; i++){
+            arr.push(i)
+        }
+        return arr
+    })
+
+    console.log(numara);
 
     const handleArttır =() => {
         setNumber(number + 1)
