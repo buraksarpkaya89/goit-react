@@ -17,6 +17,9 @@ import Forms from './components/Forms/Forms'
 import TodoHeader from './components/TodoApp/TodoHeader'
 import TodoForm from './components/TodoApp/TodoForm'
 import TodoList from './components/TodoApp/TodoList'
+import FormikApp from './components/FormikExmple/FormikApp'
+import SignUpFormik from './components/FormikExmple/SignUpFormik'
+import SurveyFormik from './components/FormikExmple/SurveyFormik'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -62,14 +65,17 @@ function App() {
   }
 
   const filteredTodos = todos.filter(todo => todo.text.toLowerCase().includes(searhText.toLowerCase()))
-  console.log(todos);
+  // console.log(todos);
 
   return (
     <>
+      <SurveyFormik />
+      {/* <SignUpFormik /> */}
+      {/* <FormikApp/> */}
 
-      <TodoHeader searhText={searhText} setSearchText={setSearchText}/>
+      {/* <TodoHeader searhText={searhText} setSearchText={setSearchText}/>
       <TodoForm addTodo={addTodo}/>
-      <TodoList filteredTodos={filteredTodos} deleteTodo={deleteTodo}/>
+      <TodoList filteredTodos={filteredTodos} deleteTodo={deleteTodo}/> */}
       {/* <Forms handleLogin= {handleLogin}/> */}
       {/* <Post data={data}/> */}
       {/* <div>
