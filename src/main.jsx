@@ -8,6 +8,9 @@ import AppContext from './Apps/AppContext.jsx'
 import DataProvider from './store/DataContext.jsx'
 import { BrowserRouter } from "react-router-dom";
 import AppRouter from './Apps/AppRouter.jsx'
+import AppRedux from './Apps/AppRedux.jsx'
+import { Provider } from 'react-redux'
+import { store } from './ReduxStore/store.js'
 
 createRoot(document.getElementById('root')).render(
     // <App />
@@ -16,7 +19,11 @@ createRoot(document.getElementById('root')).render(
     // <DataProvider>
     //    <AppContext />
     //  </DataProvider>
-    <BrowserRouter>
-        <AppRouter />
-    </BrowserRouter>
+    // <BrowserRouter>
+    //     <AppRouter />
+    // </BrowserRouter>
+    <Provider store={store}>
+        <AppRedux />
+    </Provider>,
+
 )
