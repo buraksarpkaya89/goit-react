@@ -10,7 +10,8 @@ import { BrowserRouter } from "react-router-dom";
 import AppRouter from './Apps/AppRouter.jsx'
 import AppRedux from './Apps/AppRedux.jsx'
 import { Provider } from 'react-redux'
-import { store } from './ReduxStore/store.js'
+import { store, persistor } from './ReduxStore/store.js'
+import { PersistGate } from 'redux-persist/integration/react'
 
 createRoot(document.getElementById('root')).render(
     // <App />
@@ -23,7 +24,11 @@ createRoot(document.getElementById('root')).render(
     //     <AppRouter />
     // </BrowserRouter>
     <Provider store={store}>
-        <AppRedux />
+        <PersistGate loading={null} persistor={persistor}>
+
+            <AppRedux />
+        </PersistGate>
+
     </Provider>,
 
 )
