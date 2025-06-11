@@ -7,6 +7,7 @@ import { addToCart } from '../../ReduxStore/slice/cartSlice'
 const ProductList = () => {
     const [products, setProducts] = useState([])
     const dispatch =useDispatch()
+    
     const fetchData = async () => {
         try {
             const response = await axios.get("https://dummyjson.com/products")
