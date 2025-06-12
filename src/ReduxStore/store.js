@@ -4,6 +4,8 @@ import colorSlicer from './slice/colorsSlice'
 import postSlice from './slice/postSlice'
 import cartReducer from './slice/cartSlice'
 import thunkReducer from './slice/thunkSlice'
+import selectorReducer from './slice/selectorSlice'
+
 
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
@@ -11,7 +13,7 @@ import storage from "redux-persist/lib/storage";
 const persistConfig = {
   key: "root",
   storage,
-  whiteList: ["counterValue", "colorValue", "posts", "cart","thunk"]
+  whiteList: ["counterValue", "colorValue", "posts", "cart","thunk","selector"]
 };
 
 const rootreducer = combineReducers({
@@ -20,6 +22,7 @@ const rootreducer = combineReducers({
   posts: postSlice,
   cart: cartReducer,
   thunk: thunkReducer,
+  selector: selectorReducer,
 })
 const persistedReducer = persistReducer(persistConfig, rootreducer);
 
