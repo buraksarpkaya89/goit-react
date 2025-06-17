@@ -5,6 +5,7 @@ import postSlice from './slice/postSlice'
 import cartReducer from './slice/cartSlice'
 import thunkReducer from './slice/thunkSlice'
 import selectorReducer from './slice/selectorSlice'
+import authReducer from './slice/auth/authSlice'
 
 
 import { persistStore, persistReducer } from "redux-persist";
@@ -23,6 +24,7 @@ const rootreducer = combineReducers({
   cart: cartReducer,
   thunk: thunkReducer,
   selector: selectorReducer,
+  auth: authReducer
 })
 const persistedReducer = persistReducer(persistConfig, rootreducer);
 

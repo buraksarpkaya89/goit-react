@@ -14,6 +14,7 @@ import { store, persistor } from './ReduxStore/store.js'
 import { PersistGate } from 'redux-persist/integration/react'
 import AppThunk from './Apps/AppThunk.jsx'
 import AppSelector from './Apps/AppSelector.jsx'
+import AppLogin from './Apps/AppLogin.jsx'
 
 createRoot(document.getElementById('root')).render(
     // <App />
@@ -30,7 +31,11 @@ createRoot(document.getElementById('root')).render(
 
             {/* <AppRedux /> */}
             {/* <AppThunk/> */}
-            <AppSelector/>
+            {/* <AppSelector/> */}
+            <BrowserRouter>
+                <AppLogin />
+            </BrowserRouter>
+
         </PersistGate>
 
     </Provider>,
