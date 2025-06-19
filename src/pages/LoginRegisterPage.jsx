@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import styles from "./LoginRegisterPage.module.css"
+import { useDispatch } from 'react-redux'
+import {login, register} from "../ReduxStore/slice/auth/operations"
 
 const LoginRegisterPage = () => {
-
+    const dispatch = useDispatch()
     const [showLogin, setShowLogin] = useState(false)
     const [formData, setFormData] = useState({
         name: "",
@@ -21,8 +23,10 @@ const LoginRegisterPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if(showLogin) {
-            
-        }
+            dispatch(register(formData))
+        } else (
+            dispatch(login({email: formData.email, password: formData.password}))
+        )
     }
 
     return (
